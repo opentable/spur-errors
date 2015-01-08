@@ -23,5 +23,10 @@ describe.only "SpurErrors", ->
 
   it "test callee", ->
     callee = require "../Fixtures/Callee"
-    console.log callee.run().stack
+    console.error callee.run().stack
+
+  it "errorByStatusCode()", ->
+    expect(SpurErrors.errorByStatusCode(999)).to.equal undefined
+    expect(SpurErrors.errorByStatusCode(503))
+      .to.equal SpurErrors.ServiceUnavailableError
 

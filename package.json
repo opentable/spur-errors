@@ -1,13 +1,35 @@
 {
   "name": "spur-errors",
-  "version": "0.0.1",
-  "description": "Spur errors",
+  "version": "0.0.2",
+  "description": "Common error builder utility",
+  "author": "Siavash Etemadieh <ssetem@googlemail.com>",
+  "keywords": [
+    "spur",
+    "error",
+    "exceptions"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha"
+  },
+  "bugs": {
+    "url": "https://github.com/SpurFramework/spur-errors/issues"
+  },
+  "homepage": "https://github.com/SpurFramework/spur-errors",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/SpurFramework/spur-errors.git"
+  },
   "dependencies": {
     "coffee-script": "1.8.0"
   },
+
   "devDependencies": {
     "mocha": "^2.0.1",
     "chai": "^1.10.0",
     "sinon": "^1.12.1"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
   }
 }
