@@ -4,12 +4,10 @@ describe.only "SpurErrors", ->
 
   beforeEach ->
 
-
   it "should exist", ->
     expect(SpurErrors).to.exist
 
   it "test error", ->
-
 
     notFound1 = SpurErrors.NotFoundError.create("could not find it")
 
@@ -22,11 +20,10 @@ describe.only "SpurErrors", ->
     console.log e
 
   it "test callee", ->
-    callee = require "../Fixtures/Callee"
+    callee = require "../fixtures/Callee"
     console.error callee.run().stack
 
   it "errorByStatusCode()", ->
     expect(SpurErrors.errorByStatusCode(999)).to.equal undefined
     expect(SpurErrors.errorByStatusCode(503))
       .to.equal SpurErrors.ServiceUnavailableError
-
