@@ -1,9 +1,9 @@
 class BaseError extends Error
 
-  constructor:()->
+  constructor: ()->
     super
 
-  @create:(message, internalError)->
+  @create: (message, internalError)->
     errorInstance = new @
     Error.captureStackTrace(errorInstance, arguments.callee)
 
@@ -12,17 +12,19 @@ class BaseError extends Error
 
     errorInstance
 
-
-  setInternalError:(@internalError)->
+  setInternalError: (@internalError)->
     if @internalError?.stack
       @stack += "========================================================================\n\n"
       @stack += @internalError.stack
+
     @
 
-  setErrorCode:(@errorCode)-> @
-  setMessage:(@message)-> @
+  setErrorCode: (@errorCode)-> @
 
-  setStatusCode:(@statusCode)-> @
-  setData:(@data)-> @
+  setMessage: (@message)-> @
+
+  setStatusCode: (@statusCode)-> @
+
+  setData: (@data)-> @
 
 module.exports = BaseError
