@@ -5,27 +5,32 @@ Common error builder utility for [Node.js](http://nodejs.org/). Contains common 
 [![NPM version](https://badge.fury.io/js/spur-errors.png)](http://badge.fury.io/js/spur-errors)
 [![Build Status](https://travis-ci.org/opentable/spur-errors.png?branch=master)](https://travis-ci.org/opentable/spur-errors)
 
+# About the Spur Framework
 
-## Usage
+The Spur Framework is a collection of commonly used Node.JS libraries used to create common application types with shared libraries.
 
-### Install from NPM
+[Visit NPMJS.org for a full list of Spur Framework libraries](https://www.npmjs.com/browse/keyword/spur-framework) >>
+
+# Usage
+
+## Install from NPM
 
 ```shell
 $ npm install --save spur-errors
 ```
 
-### Require and use the module
+## Require and use the module
 
 ```javascript
 var SpurErrors = require("spur-errors");
 
 SpurErrors.NotFoundError.create("could not find it")
 ```
-## API
+# API
 
 The API is designed to be daisy chained with all of the following base commands that are a part of all of the error types.
 
-### Base Object Commands
+## Base Object Commands
 
 #### .create(message, nativeError) -> instance
 
@@ -72,10 +77,10 @@ Sets customizable data that can be used down the error stack chain.
 SpurErrors.NotFound.create("Not found").setData({headers: req.headers})
 ```
 
-### Properties
+## Properties
 
 | Property      | Description                                                                         |
-| ------------- | ----------------------------------------------------------------------------------- |
+| :------------ | :---------------------------------------------------------------------------------- |
 | internalError | The original error object passed in                                                 |
 | message       | Either passed in during the create call or during the parsing of the internal error |
 | stack         | Parsed from the originally passed in internal error                                 |
@@ -83,10 +88,10 @@ SpurErrors.NotFound.create("Not found").setData({headers: req.headers})
 | statusCode    | Custom status code to be used by the Express.JS response                            |
 | data          | Custom data object to be used anyone in the flow                                    |
 
-### Error Types
+## Error Types
 
 | Error Type              | Status Code | Message                   | Error Code                |
-| ----------------------- | ----------- | ------------------------- | ------------------------- |
+| :---------------------- | :---------- | :------------------------ | :------------------------ |
 | ValidationError         | 400         | Validation Error          | validation_error          |
 | UnauthorizedError       | 401         | Unauthorized Error        | unauthorized_error        |
 | ForbiddenError          | 403         | Forbidden Error           | forbidden_error           |
@@ -98,51 +103,44 @@ SpurErrors.NotFound.create("Not found").setData({headers: req.headers})
 | BadGatewayError         | 502         | Bad Gateway Error         | bad_gateway_error         |
 | ServiceUnavailableError | 503         | Service Unavailable Error | service_unavailable_error |
 
-#### Error type example
+### Error type example
 
 ```javascript
 SpurErrors.ValidationError.create("Invalid input")
 // => {statusCode: 400, message: "Validation Error", errorCode: "validation_error", ....}
 ```
 
-## Running the unit tests
-
-To run the test suite, first install the dependencies, then run `npm test`:
-
-```bash
-$ npm install
-$ npm test
-```
-
-## Maintainers
+# Maintainers
 
 This library is maintained by
 
   - Ash – ***[@ssetem](https://github.com/ssetem)***
   - Agustin Colchado – ***[@acolchado](https://github.com/acolchado)***
 
-## License
+# Contributing
 
-The MIT License (MIT)
+## We accept pull requests
 
-Copyright (c) 2015 Spur Framework.
+Please send in pull requests and they will be reviewed in a timely manner. Please review this [generic guide to submitting a good pull requests](https://github.com/blog/1943-how-to-write-the-perfect-pull-request). The only things we ask in addition are the following:
 
-Copyright (c) 2015 OpenTable Inc. and other contributors
+ * Please submit small pull requests
+ * Provide a good description of the changes
+ * Code changes must include tests
+ * Be nice to each other in comments. :innocent:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Style guide
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+The majority of the settings are controlled using an [EditorConfig](.editorconfig) configuration file. To use it [please download a plugin](http://editorconfig.org/#download) for your editor of choice.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+## All tests should pass
+
+To run the test suite, first install the dependancies, then run `npm test`
+
+```bash
+$ npm install
+$ npm test
+```
+
+# License
+
+[MIT](LICENSE)
