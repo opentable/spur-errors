@@ -4,6 +4,7 @@ Common error builder utility for [Node.js](http://nodejs.org/). Contains common 
 
 [![NPM version](https://badge.fury.io/js/spur-errors.png)](http://badge.fury.io/js/spur-errors)
 [![Build Status](https://travis-ci.org/opentable/spur-errors.png?branch=master)](https://travis-ci.org/opentable/spur-errors)
+[![Coverage Status](https://coveralls.io/repos/github/opentable/spur-errors/badge.svg?branch=master)](https://coveralls.io/github/opentable/spur-errors?branch=master)
 
 # About the Spur Framework
 
