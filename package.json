@@ -3,17 +3,13 @@
   "description": "Common error builder utility for Node.js. Contains common error types, and stack trace tracking to support more detailed error messages.",
   "version": "0.0.5",
   "author": {
-    "name": "Siavash Etemadieh",
-    "email": "ssetem@googlemail.com"
+    "name": "Agustin Colchado",
+    "email": "agustin@colchado.com"
   },
   "contributors": [
     {
-      "name": "Agustin Colchado",
-      "email": "agustin@colchado.com"
-    },
-    {
-      "name": "Joseph McElroy",
-      "email": "phoey1@gmail.com"
+      "name": "Siavash Etemadieh",
+      "email": "ssetem@googlemail.com"
     }
   ],
   "keywords": [
