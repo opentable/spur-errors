@@ -23,9 +23,9 @@ $ npm install --save spur-errors
 ## Require and use the module
 
 ```javascript
-var SpurErrors = require("spur-errors");
+let SpurErrors = require("spur-errors");
 
-SpurErrors.NotFoundError.create("could not find it")
+SpurErrors.NotFoundError.create("could not find it");
 ```
 # API
 
@@ -42,7 +42,7 @@ try {
   ...
 }
 catch(err) {
-  SpurErrors.NotFound.create("Some error", err)
+  SpurErrors.NotFound.create("Some error", err);
 }
 ```
 
@@ -51,7 +51,7 @@ catch(err) {
 Sets an error code to later be used by error handlers.
 
 ```javascript
-SpurErrors.NotFound.create("Not found").setErrorCode("leaf_error")
+SpurErrors.NotFound.create("Not found").setErrorCode("leaf_error");
 ```
 
 #### .setMessage(message) -> instance
@@ -59,7 +59,7 @@ SpurErrors.NotFound.create("Not found").setErrorCode("leaf_error")
 Overrides the error message passed in.
 
 ```javascript
-SpurErrors.NotFound.create("Not found").setMessage("Unable to find the restaurant.")
+SpurErrors.NotFound.create("Not found").setMessage("Unable to find the restaurant.");
 ```
 
 #### .setStatusCode(statusCode) -> instance
@@ -67,7 +67,7 @@ SpurErrors.NotFound.create("Not found").setMessage("Unable to find the restauran
 Setting the response status code to be sent back down to the client.
 
 ```javascript
-SpurErrors.NotFound.create("Not found").setStatusCode(404)
+SpurErrors.NotFound.create("Not found").setStatusCode(404);
 ```
 
 #### .setData(data) -> instance
@@ -75,7 +75,7 @@ SpurErrors.NotFound.create("Not found").setStatusCode(404)
 Sets customizable data that can be used down the error stack chain.
 
 ```javascript
-SpurErrors.NotFound.create("Not found").setData({headers: req.headers})
+SpurErrors.NotFound.create("Not found").setData({headers: req.headers});
 ```
 
 ## Properties
@@ -107,7 +107,7 @@ SpurErrors.NotFound.create("Not found").setData({headers: req.headers})
 ### Error type example
 
 ```javascript
-SpurErrors.ValidationError.create("Invalid input")
+SpurErrors.ValidationError.create("Invalid input");
 // => {statusCode: 400, message: "Validation Error", errorCode: "validation_error", ....}
 ```
 
@@ -115,8 +115,13 @@ SpurErrors.ValidationError.create("Invalid input")
 
 This library is maintained by
 
-  - Ash – ***[@ssetem](https://github.com/ssetem)***
   - Agustin Colchado – ***[@acolchado](https://github.com/acolchado)***
+
+## Collaborators
+
+- Ash – ***[@ssetem](https://github.com/ssetem)***
+- Timmy Willison – ***[@timmywil](https://github.com/timmywil)***
+
 
 # Contributing
 
@@ -139,6 +144,7 @@ To run the test suite, first install the dependancies, then run `npm test`
 
 ```bash
 $ npm install
+$ npm run build
 $ npm test
 ```
 
