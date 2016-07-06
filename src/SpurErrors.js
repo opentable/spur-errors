@@ -2,6 +2,7 @@ import BaseError from './BaseError';
 
 const SpurErrors = {
   BaseError,
+
   ValidationError: BaseError.extend(400, 'Validation Error', 'validation_error'),
   UnauthorizedError: BaseError.extend(401, 'Unauthorized Error', 'unauthorized_error'),
   ForbiddenError: BaseError.extend(403, 'Forbidden Error', 'forbidden_error'),
@@ -12,6 +13,7 @@ const SpurErrors = {
   InternalServerError: BaseError.extend(500, 'Internal Server Error', 'internal_server_error'),
   BadGatewayError: BaseError.extend(502, 'Bad Gateway Error', 'bad_gateway_error'),
   ServiceUnavailableError: BaseError.extend(503, 'Service Unavailable Error', 'service_unavailable_error'),
+
   errorByStatusCode(statusCode) {
     const errorNames = Object.keys(SpurErrors);
     let spurError;
