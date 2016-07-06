@@ -7,12 +7,6 @@
     "name": "Agustin Colchado",
     "email": "agustin@colchado.com"
   },
-  "contributors": [
-    {
-      "name": "Siavash Etemadieh",
-      "email": "ssetem@googlemail.com"
-    }
-  ],
   "keywords": [
     "spur",
     "spur-framework",
@@ -37,9 +31,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/opentable/spur-errors.git"
-  },
-  "engines": {
-    "node": ">= 0.10.0"
   },
   "dependencies": {
   },
