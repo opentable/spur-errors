@@ -1,9 +1,7 @@
 import SpurErrors from '../../src/SpurErrors';
 
-class Test {
-  run(){
+module.exports = {
+  run() {
     return SpurErrors.NotFoundError.create();
   }
 };
-
-module.exports = new Test();

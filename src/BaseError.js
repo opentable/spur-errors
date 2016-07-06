@@ -1,56 +1,54 @@
-class BaseError extends Error {
-
-  constructor() {
-    super();
-  }
-
-  static create(message, internalError, ...args) {
-    const errorInstance = new this();
-
-    console.log('args.callee', args.callee);
-
-    Error.captureStackTrace(errorInstance, args.callee);
-
+const BaseError = {
+  create(message, internalError) {
+    Error.captureStackTrace(this);
+    const error = Object.assign(new Error, BaseError);
     if (message) {
-      errorInstance.setMessage(message);
+      error.message = message;
     }
-
     if (internalError) {
-      errorInstance.setInternalError(internalError);
+      error.internalError = internalError;
     }
+    return error;
+  },
 
-    return errorInstance;
-  }
+  extend(statusCode, defaultMessage, errorCode) {
+    return {
+      statusCode,
+      create(message, internalError) {
+        return Object.assign(
+          BaseError.create(message || defaultMessage, internalError),
+          { statusCode, errorCode }
+        );
+      }
+    };
+  },
 
-  setInternalError(internalError) {
-    this.internalError = internalError;
-    if (this.internalError && this.internalError.stack) {
+  set internalError(internalError) {
+    if (internalError && internalError.stack) {
       this.stack += '========================================================================\n\n';
-      this.stack += this.internalError.stack;
+      this.stack += internalError.stack;
     }
-
-    return this;
-  }
+  },
 
   setErrorCode(errorCode) {
     this.errorCode = errorCode;
     return this;
-  }
+  },
 
   setMessage(message) {
     this.message = message;
     return this;
-  }
+  },
 
   setStatusCode(statusCode) {
     this.statusCode = statusCode;
     return this;
-  }
+  },
 
   setData(data) {
     this.data = data;
     return this;
   }
-}
+};
 
 export default BaseError;

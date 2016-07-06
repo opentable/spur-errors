@@ -1,161 +1,28 @@
 import BaseError from './BaseError';
 
-exports.BaseError = BaseError;
-
-class ValidationError extends BaseError {
-  static get statusCode() {
-    return 400;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(400);
-    this.setMessage('Validation Error');
-    this.setErrorCode('validation_error');
-  }
-}
-
-class UnauthorizedError extends BaseError {
-  static get statusCode() {
-    return 401;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(401);
-    this.setMessage('Unauthorized Error');
-    this.setErrorCode('unauthorized_error');
-  }
-}
-
-class ForbiddenError extends BaseError {
-  static get statusCode() {
-    return 403;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(403);
-    this.setMessage('Forbidden Error');
-    this.setErrorCode('forbidden_error');
-  }
-}
-
-class NotFoundError extends BaseError {
-  static get statusCode() {
-    return 404;
-  }
-  constructor() {
-    super();
-    console.log();
-    this.setStatusCode(404);
-    this.setMessage('Not Found Error');
-    this.setErrorCode('not_found_error');
-  }
-}
-
-class MethodNotAllowedError extends BaseError {
-  static get statusCode() {
-    return 405;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(405);
-    this.setMessage('Method not allowed');
-    this.setErrorCode('method_not_allowed_error');
-  }
-}
-
-class RequestTimeoutError extends BaseError {
-  static get statusCode() {
-    return 408;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(408);
-    this.setMessage('Request Timeout Error');
-    this.setErrorCode('request_timeout_error');
-  }
-}
-
-class AlreadyExistsError extends BaseError {
-  static get statusCode() {
-    return 409;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(409);
-    this.setMessage('Already Exists Error');
-    this.setErrorCode('already_exists_error');
-  }
-}
-
-class InternalServerError extends BaseError {
-  static get statusCode() {
-    return 500;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(500);
-    this.setMessage('Internal Server Error');
-    this.setErrorCode('internal_server_error');
-  }
-}
-
-class BadGatewayError extends BaseError {
-  static get statusCode() {
-    return 502;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(502);
-    this.setMessage('Bad Gateway Error');
-    this.setErrorCode('bad_gateway_error');
-  }
-}
-
-class ServiceUnavailableError extends BaseError {
-  static get statusCode() {
-    return 503;
-  }
-  constructor() {
-    super();
-    this.setStatusCode(503);
-    this.setMessage('Service Unavailable Error');
-    this.setErrorCode('service_unavailable_error');
-  }
-}
-
-class SpurErrors {
-
-  constructor() {
-    this.ValidationError = ValidationError;
-    this.UnauthorizedError = UnauthorizedError;
-    this.ForbiddenError = ForbiddenError;
-    this.NotFoundError = NotFoundError;
-    this.MethodNotAllowedError = MethodNotAllowedError;
-    this.RequestTimeoutError = RequestTimeoutError;
-    this.AlreadyExistsError = AlreadyExistsError;
-    this.InternalServerError = InternalServerError;
-    this.BadGatewayError = BadGatewayError;
-    this.ServiceUnavailableError = ServiceUnavailableError;
-  }
-
-  static errorByStatusCode(statusCode) {
-    const hasProp = {}.hasOwnProperty;
-
-    const keys = Object.keys(exports);
-    let value;
-
-    keys.forEach(key => {
-      if (hasProp.call(this, key)) {
-        const tempValue = this[key];
-        if (tempValue.statusCode === statusCode) {
-          console.log('found');
-          value = tempValue;
-        }
+const SpurErrors = {
+  BaseError,
+  ValidationError: BaseError.extend(400, 'Validation Error', 'validation_error'),
+  UnauthorizedError: BaseError.extend(401, 'Unauthorized Error', 'unauthorized_error'),
+  ForbiddenError: BaseError.extend(403, 'Forbidden Error', 'forbidden_error'),
+  NotFoundError: BaseError.extend(404, 'Not Found Error', 'not_found_error'),
+  MethodNotAllowedError: BaseError.extend(405, 'Method Not Allowed', 'method_not_allowed_error'),
+  RequestTimeoutError: BaseError.extend(408, 'Request Timeout Error', 'request_timeout_error'),
+  AlreadyExistsError: BaseError.extend(409, 'Already Exists Error', 'already_exists_error'),
+  InternalServerError: BaseError.extend(500, 'Internal Server Error', 'internal_server_error'),
+  BadGatewayError: BaseError.extend(502, 'Bad Gateway Error', 'bad_gateway_error'),
+  ServiceUnavailableError: BaseError.extend(503, 'Service Unavailable Error', 'service_unavailable_error'),
+  errorByStatusCode(statusCode) {
+    const errorNames = Object.keys(SpurErrors);
+    let spurError;
+    errorNames.forEach((name) => {
+      const error = SpurErrors[name];
+      if (error.statusCode === statusCode) {
+        spurError = error;
       }
     });
-
-    return value;
+    return spurError;
   }
-}
+};
 
-export default new SpurErrors();
+module.exports = module.exports.default = SpurErrors;
