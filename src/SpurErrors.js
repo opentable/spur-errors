@@ -27,4 +27,4 @@ const SpurErrors = {
   }
 };
 
-module.exports = module.exports.default = SpurErrors;
+export default SpurErrors;
