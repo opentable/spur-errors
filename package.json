@@ -1,7 +1,7 @@
 {
   "name": "spur-errors",
   "description": "Common error builder utility for Node.js. Contains common error types, and stack trace tracking to support more detailed error messages.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "lib/SpurErrors.js",
   "jsnext:main": "./src/SpurErrors",
   "author": {
