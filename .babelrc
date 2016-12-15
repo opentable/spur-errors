@@ -1,6 +1,6 @@
 {
   "presets": ["es2015-loose"],
-  "plugins": ["add-module-exports"],
+  "plugins": ["add-module-exports", "transform-object-assign"],
   "sourceMaps": "both",
   "retainLines": "true"
 }
