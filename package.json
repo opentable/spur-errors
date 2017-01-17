@@ -29,7 +29,8 @@
     "test": "npm run test-unit && npm run test-integration",
     "build-and-test": "npm run build && npm test",
     "preversion": "npm run build-and-test",
-    "prepublish": "npm run test"
+    "prepublish": "npm run test",
+    "postinstall": "npm run build"
   },
   "bugs": {
     "url": "https://github.com/opentable/spur-errors/issues"
