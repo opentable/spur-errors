@@ -1,5 +1,6 @@
 const path = require('path');
 const chai = require('chai');
+
 global.chai = chai;
 global.expect = chai.expect;
 global.srcDir = path.resolve(__dirname, '../src');
