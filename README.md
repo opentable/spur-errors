@@ -2,9 +2,10 @@
 
 Common error builder utility for [Node.js](http://nodejs.org/). Contains common error types, and stack trace tracking to support more detailed error messages.
 
-[![NPM version](https://badge.fury.io/js/spur-errors.png)](http://badge.fury.io/js/spur-errors)
-[![Build Status](https://travis-ci.org/opentable/spur-errors.png?branch=master)](https://travis-ci.org/opentable/spur-errors)
-[![Coverage Status](https://coveralls.io/repos/github/opentable/spur-errors/badge.svg?branch=master)](https://coveralls.io/github/opentable/spur-errors?branch=master)
+[![npm version](https://badge.fury.io/js/spur-errors.svg)](http://badge.fury.io/js/spur-errors)
+[![Build Status](https://travis-ci.org/opentable/spur-errors.svg?branch=master)](https://travis-ci.org/opentable/spur-errors)
+[![Dependencies](https://david-dm.org/opentable/spur-errors.svg)](https://david-dm.org/opentable/spur-errors)
+[![devDependency Status](https://david-dm.org/opentable/spur-errors/dev-status.svg)](https://david-dm.org/opentable/spur-errors?type=dev)
 
 # About the Spur Framework
 
@@ -13,6 +14,8 @@ The Spur Framework is a collection of commonly used Node.JS libraries used to cr
 [Visit NPMJS.org for a full list of Spur Framework libraries](https://www.npmjs.com/browse/keyword/spur-framework) >>
 
 # Usage
+
+Supports active Node versions in the [LTS Schedule](https://github.com/nodejs/LTS#lts-schedule). ([view current versions](.travis.yml))
 
 ## Install from NPM
 
@@ -147,6 +150,8 @@ $ npm install
 $ npm run build
 $ npm test
 ```
+
+> Requires Node 4+ for dev tools, but we recommend using Node 6.
 
 # License
 

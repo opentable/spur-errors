@@ -1,7 +1,7 @@
 const BaseError = {
   create(message, internalError) {
     Error.captureStackTrace(this);
-    const error = Object.assign(new Error, BaseError);
+    const error = Object.assign(new Error(), BaseError);
     if (message) {
       error.message = message;
     }
