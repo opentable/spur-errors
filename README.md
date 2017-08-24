@@ -147,11 +147,8 @@ To run the test suite, first install the dependancies, then run `npm test`
 
 ```bash
 $ npm install
-$ npm run build
 $ npm test
 ```
-
-> Requires Node 4+ for dev tools, but we recommend using Node 6.
 
 # License
 
