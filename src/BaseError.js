@@ -51,4 +51,4 @@ const BaseError = {
   }
 };
 
-export default BaseError;
+module.exports = BaseError;

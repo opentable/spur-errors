@@ -1,4 +1,4 @@
-import BaseError from './BaseError';
+const BaseError = require('./BaseError');
 
 const SpurErrors = {
   BaseError,
@@ -27,4 +27,4 @@ const SpurErrors = {
   }
 };
 
-export default SpurErrors;
+module.exports = SpurErrors;
