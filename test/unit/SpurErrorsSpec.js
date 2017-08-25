@@ -1,5 +1,5 @@
-import SpurErrors from '../../src/SpurErrors';
-import Callee from '../fixtures/Callee';
+const SpurErrors = require('../../src/SpurErrors');
+const Callee = require('../fixtures/Callee');
 
 describe('SpurErrors;', () => {
   it('test error', () => {
