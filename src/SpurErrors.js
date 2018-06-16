@@ -13,6 +13,7 @@ const SpurErrors = {
   InternalServerError: BaseError.extend(500, 'Internal Server Error', 'internal_server_error'),
   BadGatewayError: BaseError.extend(502, 'Bad Gateway Error', 'bad_gateway_error'),
   ServiceUnavailableError: BaseError.extend(503, 'Service Unavailable Error', 'service_unavailable_error'),
+  GatewayTimeoutError: BaseError.extend(504, 'Gateway Timeout Error', 'gateway_timeout_error'),
 
   errorByStatusCode(statusCode) {
     const errorNames = Object.keys(SpurErrors);
