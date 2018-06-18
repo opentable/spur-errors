@@ -106,6 +106,7 @@ SpurErrors.NotFound.create("Not found").setData({headers: req.headers});
 | InternalServerError     | 500         | Internal Server Error     | internal_server_error     |
 | BadGatewayError         | 502         | Bad Gateway Error         | bad_gateway_error         |
 | ServiceUnavailableError | 503         | Service Unavailable Error | service_unavailable_error |
+| GatewayTimeoutError     | 504         | Gateway Unavailable Error | gateway_timeout_error |
 
 ### Error type example
 
@@ -119,6 +120,7 @@ SpurErrors.ValidationError.create("Invalid input");
 This library is maintained by
 
   - Agustin Colchado – ***[@acolchado](https://github.com/acolchado)***
+  - Ray Peters – ***[@ot-raypeters](https://github.com/ot-raypeters)***
 
 ## Collaborators
 

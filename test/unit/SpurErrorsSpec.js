@@ -22,4 +22,25 @@ describe('SpurErrors;', () => {
     expect(SpurErrors.errorByStatusCode(503))
       .to.equal(SpurErrors.ServiceUnavailableError);
   });
+
+  it('should have all required error constructors', () => {
+    const requiredErrors = [
+      'ValidationError',
+      'UnauthorizedError',
+      'ForbiddenError',
+      'NotFoundError',
+      'MethodNotAllowedError',
+      'RequestTimeoutError',
+      'AlreadyExistsError',
+      'InternalServerError',
+      'BadGatewayError',
+      'ServiceUnavailableError',
+      'GatewayTimeoutError'
+    ];
+
+    requiredErrors
+      .forEach((errorName) => {
+        expect(SpurErrors[errorName]).to.be.an('object');
+      });
+  });
 });
