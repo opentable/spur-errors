@@ -2,10 +2,10 @@
 
 Common error builder utility for [Node.js](http://nodejs.org/). Contains common error types, and stack trace tracking to support more detailed error messages.
 
-[![npm version](https://badge.fury.io/js/spur-errors.svg)](http://badge.fury.io/js/spur-errors)
-[![Build Status](https://travis-ci.org/opentable/spur-errors.svg?branch=master)](https://travis-ci.org/opentable/spur-errors)
-[![Dependencies](https://david-dm.org/opentable/spur-errors.svg)](https://david-dm.org/opentable/spur-errors)
-[![devDependency Status](https://david-dm.org/opentable/spur-errors/dev-status.svg)](https://david-dm.org/opentable/spur-errors?type=dev)
+
+  [![NPM Version][npm-version-image]][npm-url]
+  [![NPM Install Size][npm-install-size-image]][npm-install-size-url]
+  [![NPM Downloads][npm-downloads-image]][npm-downloads-url]
 
 # About the Spur Framework
 
@@ -155,3 +155,10 @@ $ npm test
 # License
 
 [MIT](LICENSE)
+
+[npm-downloads-image]: https://badgen.net/npm/dm/spur-errors
+[npm-downloads-url]: https://npmcharts.com/compare/spur-errors?minimal=true
+[npm-install-size-image]: https://badgen.net/packagephobia/install/spur-errors
+[npm-install-size-url]: https://packagephobia.com/result?p=spur-errors
+[npm-url]: https://npmjs.org/package/spur-errors
+[npm-version-image]: https://badgen.net/npm/v/spur-errors
