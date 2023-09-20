@@ -2,3 +2,4 @@ dist/
 lib/
 coverage/*
 test/fixtures/**/*.js
+src/SpurErrors.d.ts
