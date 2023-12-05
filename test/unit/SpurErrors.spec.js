@@ -1,7 +1,7 @@
 const SpurErrors = require('../../src/SpurErrors');
 const Callee = require('../fixtures/Callee');
 
-describe('SpurErrors;', () => {
+describe('SpurErrors;', function () {
   it('test error', () => {
     const notFound1 = SpurErrors.NotFoundError.create('could not find it');
     const notFound2 = SpurErrors.NotFoundError.create('where is it?', notFound1);
@@ -18,9 +18,9 @@ describe('SpurErrors;', () => {
   });
 
   it('errorByStatusCode()', () => {
-    expect(SpurErrors.errorByStatusCode(999)).to.equal(undefined);
+    expect(SpurErrors.errorByStatusCode(999)).toBeUndefined();
     expect(SpurErrors.errorByStatusCode(503))
-      .to.equal(SpurErrors.ServiceUnavailableError);
+      .toEqual(SpurErrors.ServiceUnavailableError);
   });
 
   it('should have all required error constructors', () => {
@@ -40,7 +40,7 @@ describe('SpurErrors;', () => {
 
     requiredErrors
       .forEach((errorName) => {
-        expect(SpurErrors[errorName]).to.be.an('object');
+        expect(SpurErrors[errorName]).toBeInstanceOf(Object);
       });
   });
 });
