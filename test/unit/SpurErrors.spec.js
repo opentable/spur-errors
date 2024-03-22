@@ -9,12 +9,15 @@ describe('SpurErrors;', function () {
       .setErrorCode('leaf_error')
       .stack;
 
-    console.log(e);
+      expect(e).toBeDefined();
   });
 
   it('test callee', () => {
     const callee = Callee;
-    console.error(callee.run().stack);
+    const result = callee.run();
+
+    expect(result.message).toBe('Not Found Error');
+    expect(result.statusCode).toBe(404);
   });
 
   it('errorByStatusCode()', () => {
